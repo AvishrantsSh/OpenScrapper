@@ -18,14 +18,19 @@ class Fetcher(object):
     def jsonify(self, index, order="row"):
         if order == "row":
             keys=[]
-            result = {}
             rows = self.lst[index].find_all('tr')
-            for i in range(len(rows)):
-                element = rows[i].find_all('td')
-                for j in range(len(element)):
-                    if i == 0:
-                        keys.append(element[j].get_text())
-            print(keys)
+            res = []
+            for tr in rows:
+                th = tr.find_all('th')
+                if th:
+                    keys.append([tr.text.strip() for tr in th if tr.text.strip()])
+
+                td = tr.find_all('td')
+                row = [tr.text.strip() for tr in td if tr.text.strip()]
+               
+                if row:
+                    res.append(row)
+            print("Keys :",keys,"\nValues : ",res)
 
         elif order == "column":
             columns = self.lst[index].find_all('tr')

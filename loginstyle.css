@@ -1,0 +1,20 @@
+*{
+    background-color: transparent;
+    color: white;
+}
+QDialog{
+    background-image: url('background2.jpg');
+    background-color: white;
+}
+QFrame{
+    background-color: rgba(25,25,25,0.95);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+QLineEdit{
+    border: 0;
+    border-bottom: 1px solid #666;
+}
+QLabel{
+    background-color: transparent;
+}

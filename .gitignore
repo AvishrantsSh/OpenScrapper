@@ -1,0 +1,6 @@
+# Cache Elimination
+/__pycache__
+*.pyc
+*.ini
+*.key
+*.ui
