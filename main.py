@@ -44,6 +44,7 @@ class MainView(QDialog):
             for i in tmp:
                 key = list(i.keys())[0]
                 self.__resp[key] = i[key]
+
             self.ui.Info.setText("Found {} table(s) in the given link.".format(len(self.__resp)))
             self.ui.listWidget.addItems(self.__resp.keys())
         else:
@@ -102,6 +103,6 @@ class LinkView(QDialog):
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    w = LoginView()
+    w = MainView()
     w.show()
     sys.exit(app.exec_())
