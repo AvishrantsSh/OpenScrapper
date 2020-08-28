@@ -29,4 +29,4 @@ class Cypher(object):
             return f.decrypt(token).decode('utf-8')
             
         except:
-            return None
+            return False
